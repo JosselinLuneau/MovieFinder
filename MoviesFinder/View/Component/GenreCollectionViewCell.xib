@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreCollectionViewCell" customModule="MoviesFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4t-7b-JgM">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZ9-kd-Nke">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr1-gh-amR">
+                                <rect key="frame" x="-61.5" y="19" width="101.5" height="29"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cr1-gh-amR" secondAttribute="trailing" constant="10" id="Cxp-Co-L4M"/>
+                            <constraint firstAttribute="trailing" secondItem="kZ9-kd-Nke" secondAttribute="trailing" id="Fle-aK-WLC"/>
+                            <constraint firstItem="kZ9-kd-Nke" firstAttribute="top" secondItem="G4t-7b-JgM" secondAttribute="top" id="GiV-LG-mFR"/>
+                            <constraint firstAttribute="bottom" secondItem="kZ9-kd-Nke" secondAttribute="bottom" id="NML-Tx-2e7"/>
+                            <constraint firstAttribute="bottom" secondItem="Cr1-gh-amR" secondAttribute="bottom" constant="2" id="beU-h8-krO"/>
+                            <constraint firstItem="kZ9-kd-Nke" firstAttribute="leading" secondItem="G4t-7b-JgM" secondAttribute="leading" id="pJa-Oa-R7l"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="G4t-7b-JgM" secondAttribute="trailing" id="AUH-0k-c9W"/>
+                <constraint firstItem="G4t-7b-JgM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KTU-kL-0XV"/>
+                <constraint firstItem="G4t-7b-JgM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LvC-J8-bhO"/>
+                <constraint firstItem="G4t-7b-JgM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dTZ-e9-boT"/>
+                <constraint firstItem="G4t-7b-JgM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ekv-hI-KGA"/>
+                <constraint firstAttribute="bottom" secondItem="G4t-7b-JgM" secondAttribute="bottom" id="xV5-dO-9im"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="bgImage" destination="kZ9-kd-Nke" id="6nA-Ny-rxU"/>
+                <outlet property="categoryName" destination="Cr1-gh-amR" id="H3d-Ej-85D"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>

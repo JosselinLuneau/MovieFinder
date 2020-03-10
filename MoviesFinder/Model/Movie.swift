@@ -7,20 +7,41 @@
 //
 
 import Foundation
+import UIKit
 
-struct Movie: Codable {
+struct Movie {
+    var id: Int
     var title: String
     var description: String
-    var image: String?
+    var backgroundImage: String?
+    var posterImage: String?
     
     var releaseDate: Int
-    var time: Int
+    var time: Int = 0
     
-    init(title: String, description: String, releaseDate: Int, time: Int, image: String?) {
+    let dateFormat = "yyyy-MM-dd"
+    
+    init(id: Int, title: String, description: String, releaseDate: String, posterImage: String?, backgroundImage: String?, time: Int) {
+        self.id = id
         self.title = title
         self.description = description
-        self.releaseDate = releaseDate
+        self.posterImage = posterImage
+        self.backgroundImage = backgroundImage
         self.time = time
-        self.image = image
+        
+        let calendar = Calendar.current
+        self.releaseDate = calendar.component(.year, from: DateFormatter.getFormattedDateFromString(stringDate: releaseDate, dateFormat: self.dateFormat))
     }
+    
+    init(id: Int, title: String, description: String, releaseDate: String, posterImage: String?, backgroundImage: String?) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.posterImage = posterImage
+        self.backgroundImage = backgroundImage
+        
+        let calendar = Calendar.current
+        self.releaseDate = calendar.component(.year, from: DateFormatter.getFormattedDateFromString(stringDate: releaseDate, dateFormat: self.dateFormat))
+    }
+    
 }
