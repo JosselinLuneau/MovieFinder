@@ -74,7 +74,6 @@ class APIManager {
     
     public func getMovies(genreId: Int = -1, page: Int = 1 ,completion: @escaping ([Movie]) -> Void) -> Void {
         if let url = builRequestUrl(endpoint: EndPoint.movieList.rawValue, queries: ["with_genres": genreId, "page": page]) {
-            print(url)
             NetworkManager.shared.fetchData(url: url) { (data) in
                 if let movieListResponse: MovieListDTO = try? JSONDecoder().decode(MovieListDTO.self, from: data) {
                     completion(movieListResponse.transformToMovieList()) // TODO: refactor (pass class in parameter and create protocol -> func transform)
